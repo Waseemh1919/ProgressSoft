@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Check for a Deal
+{% endblock %}
+
+{% block main %}
+    <form action="/check" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" minlength = "10" maxlength = "10" name="deal_id" placeholder="Unique Deal Id" type="integer">
+        </div>
+        <button class="btn btn-primary" type="submit">Check Deal</button>
+    </form>
+{% endblock %}

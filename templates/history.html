@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>The employee that added the Deal</th>
+                <th>Deal Id</th>
+                <th>From ISO code</th>
+                <th>To ISO code</th>
+                <th>Date</th>
+                <th>Deal Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alldeal in alldeals %}
+            <tr>
+                <td>{{alldeal["user_id"]}}</td>
+                <td>{{alldeal["deal_id"]}}</td>
+                <td>{{alldeal["from_iso_code"]}}</td>
+                <td>{{alldeal["to_iso_code"]}}</td>
+                <td>{{alldeal["timestamp"]}}</td>
+                <td>{{alldeal["deal_amount"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

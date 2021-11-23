@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Deal Result
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>The employee that added the Deal</th>
+                <th>Deal Id</th>
+                <th>From ISO code</th>
+                <th>To ISO code</th>
+                <th>Date</th>
+                <th>Deal Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for deal in deals %}
+            <tr>
+                <td>{{deal["user_id"]}}</td>
+                <td>{{deal["deal_id"]}}</td>
+                <td>{{deal["from_iso_code"]}}</td>
+                <td>{{deal["to_iso_code"]}}</td>
+                <td>{{deal["timestamp"]}}</td>
+                <td>{{deal["deal_amount"]}}</td>
+            </tr>
+            {% endfor %}
+{% endblock %}
